@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './assets/logo.png';
 import './search-bar.css';
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
+  state = {
+    busqueda: '',
+  };
   handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
     console.log('soy el input', e.target.value);
   };
   handleSubmit = (e) => {
@@ -24,8 +28,9 @@ class SearchBar extends React.Component {
                   name='busqueda'
                   type='text'
                   id='buscar'
+                  value={this.busqueda}
                   placeholder='Buscar pokemon'
-                  onChange={this.handleChange}
+                  onChange={this.props.onChange}
                 />
               </div>
               {/* <button type='submit' className='btn btn-primary'>
