@@ -22,7 +22,7 @@ class PageHome extends React.Component {
                 />
               </div>
               <div className='actions'>
-                <button className='btng'>Buscar similares</button>
+                <button className='btng' type='submit'>Buscar similares</button>
                 <button className='btng'>Buscar similares2</button>
               </div>
             </form>
