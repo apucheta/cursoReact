@@ -8,12 +8,22 @@ class PageSearchResult extends React.Component {
   state = {
     busqueda: '',
   };
+  componentWillMount(){
+    console.log('component will mount');
+  }
+  componentDidMount(){
+    console.log('component did mount');
+  }
+  componentWillUnmount(){
+    console.log('will unmount ');
+  }
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
   render() {
+    console.log('soy el render papa');
     return (
       <React.Fragment>
         <SearchBar onChange={this.changeHandler} />
