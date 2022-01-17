@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-import logo from './assets/logo.png';
-import './search-bar.css';
+import React, { Component } from "react";
+import logo from "./assets/logo.png";
+import "./search-bar.css";
+
+import { Link } from "react-router-dom";
 
 class SearchBar extends Component {
   state = {
-    busqueda: '',
+    busqueda: "",
   };
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log('soy el input', e.target.value);
+    console.log("soy el input", e.target.value);
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -17,19 +19,21 @@ class SearchBar extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className='row'>
-          <div className='col-md-2'>
-            <img src={logo} alt='' className='logo-barra' />
+        <div className="row">
+          <div className="col-md-2">
+            <Link to="/">
+              <img src={logo} alt="" className="logo-barra" />
+            </Link>
           </div>
-          <div className='col-md-4'>
-            <form className='form-inline' onSubmit={this.handleSubmit}>
-              <div className='busqueda'>
+          <div className="col-md-4">
+            <form className="form-inline" onSubmit={this.handleSubmit}>
+              <div className="busqueda">
                 <input
-                  name='busqueda'
-                  type='text'
-                  id='buscar'
+                  name="busqueda"
+                  type="text"
+                  id="buscar"
                   value={this.busqueda}
-                  placeholder='Buscar pokemon'
+                  placeholder="Buscar pokemon"
                   onChange={this.props.onChange}
                 />
               </div>

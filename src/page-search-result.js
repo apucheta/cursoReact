@@ -3,6 +3,7 @@ import SearchBar from './component/search-bar.js';
 import SearchResult from './component/search-result.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 class PageSearchResult extends React.Component {
   state = {
     busqueda: '',

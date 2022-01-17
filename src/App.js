@@ -5,16 +5,19 @@ import PageHome from "./home-page.js";
 import PageArtist from "./page-artist.js";
 import PageSearchResult from "./page-search-result.js";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Layout from "./component/layout";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
+      <Layout>
         <Switch>
           <Route exact path="/busqueda" component={PageSearchResult} />
           <Route exact path="/artista" component={PageArtist} />
           <Route path="/" component={PageHome} />
         </Switch>
+        </Layout>
       </BrowserRouter>
     );
   }
